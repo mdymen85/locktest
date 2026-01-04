@@ -1,0 +1,14 @@
+docker run --name mysql \
+-e MYSQL_ROOT_PASSWORD=root \
+-e MYSQL_DATABASE=mydb \
+-p 3306:3306 \
+mysql:8.0
+
+
+CREATE TABLE users (
+id BIGINT AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(255) NOT NULL,
+external_id VARCHAR(255),
+date_created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+activated BOOLEAN NOT NULL DEFAULT FALSE
+);
